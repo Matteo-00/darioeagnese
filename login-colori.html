@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alice & Andrea – Prove colori login</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background: #fdfcfa;
+      color: #4b4b4b;
+      line-height: 1.7;
+    }
+
+    /* Ogni versione definisce la sua palette */
+    .variant {
+      --base: #ec6d38;
+      --light: #f4946a;
+      --lighter: #f9c2a8;
+      --lightest: #fdeee7;
+      --dark: #d4552a;
+      --rgb: 236, 109, 56;
+
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(160deg, var(--lightest) 0%, #fdfcfa 55%, var(--lightest) 100%);
+    }
+
+    .variant.arancione {
+      --base: #ec6d38; --light: #f4946a; --lighter: #f9c2a8; --lightest: #fdeee7; --dark: #d4552a; --rgb: 236, 109, 56;
+    }
+    .variant.rosa {
+      --base: #f18070; --light: #f6a597; --lighter: #fad0c9; --lightest: #fef0ed; --dark: #dd6656; --rgb: 241, 128, 112;
+    }
+    .variant.fucsia {
+      --base: #ed1e4c; --light: #f4607f; --lighter: #f9a5b8; --lightest: #fee9ee; --dark: #c5143c; --rgb: 237, 30, 76;
+    }
+
+    .label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .password-card {
+      background: white;
+      padding: 50px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 50px rgba(var(--rgb), 0.22);
+      border-top: 4px solid transparent;
+      border-image: linear-gradient(to right, var(--lighter), var(--base), var(--lighter)) 1;
+      text-align: center;
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .password-title-img { max-width: 100%; height: auto; margin-bottom: 20px; }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--base), transparent);
+      margin: 25px auto;
+    }
+
+    .password-text {
+      color: var(--dark);
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .password-input {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid var(--lighter);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      transition: all 0.3s ease;
+      letter-spacing: 2px;
+    }
+
+    .password-input:focus {
+      outline: none;
+      border-color: var(--base);
+      box-shadow: 0 0 0 3px rgba(var(--rgb), 0.18);
+    }
+
+    .password-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      background: linear-gradient(135deg, var(--light) 0%, var(--base) 50%, var(--dark) 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 14px rgba(var(--rgb), 0.35);
+    }
+
+    .password-btn:hover {
+      background: linear-gradient(135deg, var(--base) 0%, var(--dark) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(var(--rgb), 0.5);
+    }
+
+    /* Linea di separazione con tutti i colori */
+    .color-line {
+      height: 8px;
+      background: linear-gradient(to right,
+          #f9c2a8 0%, #f4946a 10%, #ec6d38 20%, #d4552a 30%,
+          #fad0c9 36%, #f6a597 46%, #f18070 56%, #dd6656 64%,
+          #f9a5b8 70%, #f4607f 80%, #ed1e4c 90%, #c5143c 100%);
+    }
+
+    @media (max-width: 480px) {
+      .password-card { padding: 40px 28px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- VERSIONE 1: ARANCIONE #ec6d38 -->
+  <section class="variant arancione">
+    <p class="label">Versione 1 · Arancione #ec6d38</p>
+    <div class="password-card">
+      <img src="nomi.png" alt="Alice e Andrea" class="password-title-img">
+      <div class="divider"></div>
+      <p class="password-text">Inserisci la password per accedere</p>
+      <form onsubmit="return false">
+        <input type="password" class="password-input" placeholder="Password" autocomplete="off">
+        <button type="submit" class="password-btn">Accedi</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="color-line"></div>
+
+  <!-- VERSIONE 2: ROSA #f18070 -->
+  <section class="variant rosa">
+    <p class="label">Versione 2 · Rosa #f18070</p>
+    <div class="password-card">
+      <img src="nomi.png" alt="Alice e Andrea" class="password-title-img">
+      <div class="divider"></div>
+      <p class="password-text">Inserisci la password per accedere</p>
+      <form onsubmit="return false">
+        <input type="password" class="password-input" placeholder="Password" autocomplete="off">
+        <button type="submit" class="password-btn">Accedi</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="color-line"></div>
+
+  <!-- VERSIONE 3: FUCSIA #ed1e4c -->
+  <section class="variant fucsia">
+    <p class="label">Versione 3 · Fucsia #ed1e4c</p>
+    <div class="password-card">
+      <img src="nomi.png" alt="Alice e Andrea" class="password-title-img">
+      <div class="divider"></div>
+      <p class="password-text">Inserisci la password per accedere</p>
+      <form onsubmit="return false">
+        <input type="password" class="password-input" placeholder="Password" autocomplete="off">
+        <button type="submit" class="password-btn">Accedi</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+
+</html>
