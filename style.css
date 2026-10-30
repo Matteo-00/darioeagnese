@@ -350,7 +350,7 @@ body {
   width: 100%;
   margin-top: 20px;
   padding: 15px;
-  background: var(--gradient);
+  background: var(--base);
   box-shadow: 0 4px 14px rgba(var(--rgb), 0.35);
   color: white;
   border: none;
@@ -364,7 +364,7 @@ body {
 }
 
 .password-btn:hover {
-  background: var(--gradient-hover);
+  background: var(--dark);
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(var(--rgb), 0.5);
 }
