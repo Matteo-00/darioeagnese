@@ -19,7 +19,7 @@
   <!-- PASSWORD OVERLAY -->
   <div class="password-overlay" id="passwordOverlay">
     <div class="password-card">
-      <img src="nomi.png" alt="Alice e Andrea" class="password-title-img">
+      <img src="nomi.png" alt="Dario e Agnese" class="password-title-img">
       <div class="divider"></div>
       <p class="password-text">Inserisci la password per accedere</p>
       <form id="passwordForm">
@@ -34,7 +34,7 @@
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <img src="logo.png" alt="Alice & Andrea" class="hero-logo">
+      <img src="nomi.png" alt="Dario e Agnese" class="hero-logo">
       <p class="hero-subtitle">Il nostro matrimonio</p>
       <p class="hero-date">18 Luglio 2026</p>
     </div>
@@ -47,17 +47,6 @@
       Siamo felici di condividere con voi uno dei giorni più importanti della nostra vita<br>
       In questa pagina troverete tutte le informazioni utili per celebrare insieme a noi questo momento speciale
     </p>
-  </section>
-
-  <!-- FOTO -->
-  <section class="section photo-section">
-    <div class="photo-frame">
-      <img src="assets/1.jpg" alt="Alice e Andrea" class="carousel-image active">
-      <img src="assets/2.jpg" alt="Alice e Andrea" class="carousel-image">
-      <img src="assets/3.jpg" alt="Alice e Andrea" class="carousel-image">
-      <img src="assets/4.jpg" alt="Alice e Andrea" class="carousel-image">
-      <img src="assets/5.jpg" alt="Alice e Andrea" class="carousel-image">
-    </div>
   </section>
 
   <!-- INFO EVENTO -->
@@ -116,14 +105,6 @@
   <footer class="footer">
     <p>Non vediamo l'ora di festeggiare insieme a voi</p>
   </footer>
-  
-  <!-- FIORI FONDO PAGINA -->
-    <div class="flowers-bottom" style="display: flex; justify-content: center; align-items: flex-end; gap: 0; padding: 12px 0;">
-      <img src="fiorilunghi.png" alt="" style="height: 120px; width: auto; margin: 0; padding: 0;">
-      <img src="fiorilunghi.png" alt="" style="height: 120px; width: auto; margin: 0; padding: 0; margin-left: -36px;">
-      
-
-    </div>
   <!-- MODAL CONFERMA PRESENZA -->
   <div class="rsvp-modal-overlay" id="rsvpModalOverlay">
     <div class="rsvp-modal">
@@ -274,19 +255,6 @@
     // Focus automatico sull'input
     input.focus();
 
-    // ===== CAROUSEL FOTO =====
-    const carouselImages = document.querySelectorAll('.carousel-image');
-    let currentIndex = 0;
-
-    function showNextImage() {
-      carouselImages[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % carouselImages.length;
-      carouselImages[currentIndex].classList.add('active');
-    }
-
-    // Cambia immagine ogni 3.5 secondi
-    setInterval(showNextImage, 3500);
-
     // ===== MODAL RSVP =====
     const openRsvpBtn = document.getElementById('openRsvpModal');
     const closeRsvpBtn = document.getElementById('closeRsvpModal');
@@ -377,7 +345,7 @@
         descrizione_numero_partecipanti: null,
         allergeni_intolleranze: false,
         descrizione_allergeni_intolleranze: null,
-        idmatrimonio: '001'
+        idmatrimonio: '04'
       };
 
       // Se partecipa, aggiungi dati partecipanti e allergie
