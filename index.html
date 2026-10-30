@@ -49,6 +49,16 @@
     </p>
   </section>
 
+  <!-- FOTO -->
+  <section class="section photo-section">
+    <div class="photo-frame">
+      <img src="assets/1.jpg" alt="Dario e Agnese" class="carousel-image active">
+      <img src="assets/2.jpg" alt="Dario e Agnese" class="carousel-image">
+      <img src="assets/3.jpg" alt="Dario e Agnese" class="carousel-image" style="object-position: 68% 50%;">
+      <img src="assets/4.jpg" alt="Dario e Agnese" class="carousel-image">
+    </div>
+  </section>
+
   <!-- INFO EVENTO -->
   <section class="section event-details">
     <h2>Il nostro giorno speciale</h2>
@@ -256,6 +266,19 @@
 
     // Focus automatico sull'input
     input.focus();
+
+    // ===== CAROUSEL FOTO =====
+    const carouselImages = document.querySelectorAll('.carousel-image');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      carouselImages[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % carouselImages.length;
+      carouselImages[currentIndex].classList.add('active');
+    }
+
+    // Cambia immagine ogni 3.5 secondi
+    setInterval(showNextImage, 3500);
 
     // ===== MODAL RSVP =====
     const openRsvpBtn = document.getElementById('openRsvpModal');
