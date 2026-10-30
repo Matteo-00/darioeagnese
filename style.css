@@ -264,7 +264,7 @@ body {
 .password-overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(160deg, var(--lightest) 0%, #fdfcfa 55%, var(--lightest) 100%);
+  background: linear-gradient(180deg, #fdfaf7 0%, #fffdfb 50%, #fbf6f2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,7 +277,7 @@ body {
   background: white;
   padding: 50px 60px;
   border-radius: 20px;
-  box-shadow: 0 10px 50px rgba(var(--rgb), 0.22);
+  box-shadow: 0 12px 40px rgba(110, 70, 50, 0.10);
   text-align: center;
   max-width: 450px;
   width: 90%;
@@ -295,6 +295,16 @@ body {
   right: 0;
   height: 4px;
   background: linear-gradient(to right, var(--lighter), var(--base), var(--lighter));
+}
+
+.password-card::before {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--light), transparent);
+}
+
+.password-card .divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--muted), transparent);
 }
 
 .password-title {
@@ -333,7 +343,7 @@ body {
 .password-input {
   width: 100%;
   padding: 15px 20px;
-  border: 2px solid var(--lighter);
+  border: 1.5px solid #ebe1da;
   border-radius: 12px;
   font-size: 1rem;
   font-family: 'Playfair Display', serif;
@@ -344,8 +354,8 @@ body {
 
 .password-input:focus {
   outline: none;
-  border-color: var(--base);
-  box-shadow: 0 0 0 3px rgba(var(--rgb), 0.18);
+  border-color: var(--light);
+  box-shadow: 0 0 0 3px rgba(var(--rgb), 0.10);
 }
 
 .password-btn {
@@ -353,7 +363,7 @@ body {
   margin-top: 20px;
   padding: 15px;
   background: var(--base);
-  box-shadow: 0 4px 14px rgba(var(--rgb), 0.35);
+  box-shadow: 0 4px 12px rgba(var(--rgb), 0.22);
   color: white;
   border: none;
   border-radius: 12px;
