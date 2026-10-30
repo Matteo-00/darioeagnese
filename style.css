@@ -303,6 +303,7 @@ body {
 }
 
 .password-card .divider {
+  margin-top: 18px;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--muted), transparent);
 }
@@ -317,7 +318,7 @@ body {
 .password-title-img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .password-subtitle {
@@ -361,9 +362,9 @@ body {
 .password-btn {
   width: 100%;
   margin-top: 20px;
-  padding: 15px;
+  padding: 13px;
   background: var(--base);
-  box-shadow: 0 4px 12px rgba(var(--rgb), 0.22);
+  box-shadow: 0 3px 10px rgba(var(--rgb), 0.16);
   color: white;
   border: none;
   border-radius: 12px;
@@ -371,14 +372,14 @@ body {
   font-family: 'Playfair Display', serif;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 
 .password-btn:hover {
   background: var(--dark);
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(var(--rgb), 0.5);
+  box-shadow: 0 5px 16px rgba(var(--rgb), 0.3);
 }
 
 .error-message {
