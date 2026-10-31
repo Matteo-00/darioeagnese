@@ -18,6 +18,11 @@ body {
   position: relative;
 }
 
+.admin-header .lang-switch {
+  top: 0;
+  right: 0;
+}
+
 .admin-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;

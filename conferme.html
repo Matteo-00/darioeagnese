@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-i18n-doc="doc.admin">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,60 +16,63 @@
 
   <div class="admin-container">
     <header class="admin-header">
-      <h1 class="admin-title">Conferme Matrimonio</h1>
-      <p class="admin-subtitle">Dario & Agnese - Gestione partecipazioni</p>
-      <a href="index.html" class="btn-back">← Torna al sito</a>
+      <div class="lang-switch" role="group" aria-label="Lingua / Language">
+        <button type="button" data-lang="it">IT</button><span aria-hidden="true">·</span><button type="button" data-lang="en">EN</button>
+      </div>
+      <h1 class="admin-title" data-i18n="admin.title">Conferme Matrimonio</h1>
+      <p class="admin-subtitle" data-i18n="admin.subtitle">Dario & Agnese - Gestione partecipazioni</p>
+      <a href="index.html" class="btn-back" data-i18n="admin.back">← Torna al sito</a>
     </header>
 
     <!-- Filtri e ricerca -->
     <div class="filters-section">
       <div class="search-bar">
-        <input type="text" id="searchAll" placeholder="🔍 Ricerca generale" class="search-input">
+        <input type="text" id="searchAll" placeholder="🔍 Ricerca generale" data-i18n-placeholder="admin.searchAll" class="search-input">
       </div>
 
       <div class="filters-grid">
         <div class="filter-group">
-          <label>Cerca per nome</label>
-          <input type="text" id="filterNome" placeholder="Nome" class="filter-input">
+          <label data-i18n="admin.byFirstName">Cerca per nome</label>
+          <input type="text" id="filterNome" placeholder="Nome" data-i18n-placeholder="admin.firstName" class="filter-input">
         </div>
 
         <div class="filter-group">
-          <label>Cerca per cognome</label>
-          <input type="text" id="filterCognome" placeholder="Cognome" class="filter-input">
+          <label data-i18n="admin.byLastName">Cerca per cognome</label>
+          <input type="text" id="filterCognome" placeholder="Cognome" data-i18n-placeholder="admin.lastName" class="filter-input">
         </div>
 
         <div class="filter-group">
-          <label>Presenza</label>
+          <label data-i18n="admin.attendance">Presenza</label>
           <select id="filterPresenza" class="filter-select">
-            <option value="">Tutti</option>
-            <option value="true">Partecipano</option>
-            <option value="false">Non partecipano</option>
+            <option value="" data-i18n="admin.all">Tutti</option>
+            <option value="true" data-i18n="admin.attending">Partecipano</option>
+            <option value="false" data-i18n="admin.notAttending">Non partecipano</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <label>Allergie</label>
+          <label data-i18n="admin.allergies">Allergie</label>
           <select id="filterAllergie" class="filter-select">
-            <option value="">Tutti</option>
-            <option value="true">Sì</option>
-            <option value="false">No</option>
+            <option value="" data-i18n="admin.all">Tutti</option>
+            <option value="true" data-i18n="admin.yes">Sì</option>
+            <option value="false" data-i18n="admin.no">No</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <label>Ordina per</label>
+          <label data-i18n="admin.sortBy">Ordina per</label>
           <select id="sortBy" class="filter-select">
-            <option value="data_desc">Data (più recenti)</option>
-            <option value="data_asc">Data (più vecchi)</option>
-            <option value="nome_asc">Nome (A-Z)</option>
-            <option value="nome_desc">Nome (Z-A)</option>
-            <option value="cognome_asc">Cognome (A-Z)</option>
-            <option value="cognome_desc">Cognome (Z-A)</option>
+            <option value="data_desc" data-i18n="admin.sortDateDesc">Data (più recenti)</option>
+            <option value="data_asc" data-i18n="admin.sortDateAsc">Data (più vecchi)</option>
+            <option value="nome_asc" data-i18n="admin.sortFirstAsc">Nome (A-Z)</option>
+            <option value="nome_desc" data-i18n="admin.sortFirstDesc">Nome (Z-A)</option>
+            <option value="cognome_asc" data-i18n="admin.sortLastAsc">Cognome (A-Z)</option>
+            <option value="cognome_desc" data-i18n="admin.sortLastDesc">Cognome (Z-A)</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <button id="resetFilters" class="btn-reset">Cancella filtri</button>
+          <button id="resetFilters" class="btn-reset" data-i18n="admin.clear">Cancella filtri</button>
         </div>
       </div>
     </div>
@@ -78,43 +81,43 @@
     <div class="stats-section">
       <div class="stat-card">
         <span class="stat-number" id="totalConferme">0</span>
-        <span class="stat-label">Conferme totali</span>
+        <span class="stat-label" data-i18n="admin.statTotal">Conferme totali</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" id="totalPresenti">0</span>
-        <span class="stat-label">Partecipano</span>
+        <span class="stat-label" data-i18n="admin.statAttending">Partecipano</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" id="totalAssenti">0</span>
-        <span class="stat-label">Non partecipano</span>
+        <span class="stat-label" data-i18n="admin.statNotAttending">Non partecipano</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" id="totalPartecipanti">0</span>
-        <span class="stat-label">Numero partecipanti</span>
+        <span class="stat-label" data-i18n="admin.statGuests">Numero partecipanti</span>
       </div>
       <div class="stat-card">
         <span class="stat-number" id="totalAllergie">0</span>
-        <span class="stat-label">Con allergie</span>
+        <span class="stat-label" data-i18n="admin.statAllergies">Con allergie</span>
       </div>
     </div>
 
     <!-- Tabella -->
     <div class="table-container">
-      <div id="loadingMessage" class="loading-message">Caricamento dati...</div>
+      <div id="loadingMessage" class="loading-message" data-i18n="admin.loading">Caricamento dati...</div>
       <div id="errorMessage" class="error-message" style="display: none;"></div>
       
       <table class="conferme-table" id="confermeTable" style="display: none;">
         <thead>
           <tr>
-            <th>Nome</th>
-            <th>Cognome</th>
-            <th>Presenza</th>
-            <th>N. Partecipanti</th>
-            <th>Nomi Partecipanti</th>
-            <th>Messaggio</th>
-            <th>Allergie</th>
-            <th>Dettagli Allergie</th>
-            <th>Data Conferma</th>
+            <th data-i18n="admin.colFirstName">Nome</th>
+            <th data-i18n="admin.colLastName">Cognome</th>
+            <th data-i18n="admin.colAttendance">Presenza</th>
+            <th data-i18n="admin.colGuests">N. Partecipanti</th>
+            <th data-i18n="admin.colGuestNames">Nomi Partecipanti</th>
+            <th data-i18n="admin.colMessage">Messaggio</th>
+            <th data-i18n="admin.colAllergies">Allergie</th>
+            <th data-i18n="admin.colAllergyDetails">Dettagli Allergie</th>
+            <th data-i18n="admin.colDate">Data Conferma</th>
           </tr>
         </thead>
         <tbody id="tableBody">
@@ -122,14 +125,15 @@
         </tbody>
       </table>
 
-      <div id="noResults" class="no-results" style="display: none;">
-        Nessun risultato trovato
-      </div>
+      <div id="noResults" class="no-results" style="display: none;" data-i18n="admin.noResults">Nessun risultato trovato</div>
     </div>
 
   </div>
 
+  <script src="i18n.js"></script>
   <script>
+    applyLang(currentLang);
+
     const SUPABASE_URL = 'https://wdinlazhjttgrkxdzyoa.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndkaW5sYXpoanR0Z3JreGR6eW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1MTEwNTgsImV4cCI6MjA4NzA4NzA1OH0.C9AIZLk_mYVxGh4Po0OPyr_RcQtkplytCjyRLRB-IM4';
 
@@ -187,7 +191,7 @@
       } catch (error) {
         console.error('Errore:', error);
         loadingMessage.style.display = 'none';
-        errorMessage.textContent = 'Errore nel caricamento dei dati Riprova';
+        errorMessage.textContent = t('admin.loadError');
         errorMessage.style.display = 'block';
       }
     }
@@ -290,7 +294,7 @@
       noResults.style.display = 'none';
 
       tableBody.innerHTML = filteredData.map(item => {
-        const dataFormatted = new Date(item.data_compilazione).toLocaleString('it-IT', {
+        const dataFormatted = new Date(item.data_compilazione).toLocaleString(t('admin.locale'), {
           day: '2-digit',
           month: '2-digit',
           year: 'numeric',
@@ -304,7 +308,7 @@
             <td>${item.cognome || '-'}</td>
             <td>
               <span class="badge ${item.presenza ? 'badge-success' : 'badge-danger'}">
-                ${item.presenza ? '✓ Sì' : '✗ No'}
+                ${item.presenza ? t('admin.badgeYes') : t('admin.badgeNo')}
               </span>
             </td>
             <td class="text-center">${item.presenza ? (item.numero_partecipanti || '-') : '-'}</td>
@@ -312,7 +316,7 @@
             <td>${item.descrizione_presenza || '-'}</td>
             <td class="text-center">
               ${item.presenza ? 
-                `<span class="badge ${item.allergeni_intolleranze ? 'badge-warning' : 'badge-info'}">${item.allergeni_intolleranze ? 'Sì' : 'No'}</span>` 
+                `<span class="badge ${item.allergeni_intolleranze ? 'badge-warning' : 'badge-info'}">${item.allergeni_intolleranze ? t('admin.yes') : t('admin.no')}</span>` 
                 : '-'}
             </td>
             <td>${item.descrizione_allergeni_intolleranze || '-'}</td>
@@ -339,6 +343,9 @@
       sortBy.value = 'data_desc';
       applyFiltersAndSort();
     });
+
+    // Al cambio lingua ridisegna la tabella con i testi tradotti
+    document.addEventListener('langchange', () => { if (allData.length) renderTable(); });
 
     // Carica dati all'avvio
     loadData();
