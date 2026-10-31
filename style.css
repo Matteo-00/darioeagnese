@@ -31,23 +31,30 @@ body {
 
 /* HERO */
 .hero {
-  height: 100vh;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  width: 100%;
+  aspect-ratio: 1050 / 1024;
+  background: url('assets/location.jpg') center top / 100% auto no-repeat;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(253, 238, 231, 0.88) 0%, rgba(255, 250, 247, 0.82) 55%, rgba(253, 238, 231, 0.88) 100%);
+  background: linear-gradient(to bottom,
+      rgba(255, 250, 246, 0.55) 0%,
+      rgba(255, 250, 246, 0.15) 22%,
+      rgba(255, 250, 246, 0) 35%,
+      rgba(253, 252, 250, 0) 90%,
+      rgba(253, 252, 250, 1) 100%);
 }
 
 .hero-content {
   position: relative;
   text-align: center;
-  padding: 20px;
+  padding: 7% 20px 0;
 }
 
 .hero-logo {
@@ -65,14 +72,56 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
-  margin-top: 10px;
+  font-size: 2.2rem;
+  font-style: italic;
+  color: var(--ink);
+  text-shadow: 0 1px 12px rgba(255, 250, 246, 0.9);
 }
 
 .hero-date {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #5a4a42;
+  text-shadow: 0 1px 10px rgba(255, 250, 246, 0.9);
+}
+
+@media (max-width: 899px) {
+  .overlay {
+    background: linear-gradient(to bottom,
+        rgba(255, 250, 246, 0.75) 0%,
+        rgba(255, 250, 246, 0.35) 18%,
+        rgba(255, 250, 246, 0) 30%,
+        rgba(253, 252, 250, 0) 90%,
+        rgba(253, 252, 250, 1) 100%);
+  }
+
+  .hero-content {
+    padding-top: 4%;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.35rem, 6.6vw, 1.9rem);
+    white-space: nowrap;
+  }
+
+  .hero-date {
+    margin-top: 2px;
+    font-size: 0.62rem;
+    letter-spacing: 4px;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-content {
+    padding-top: 6%;
+  }
+
+  .hero-subtitle {
+    font-size: 3rem;
+  }
 }
 
 /* SEZIONI */
